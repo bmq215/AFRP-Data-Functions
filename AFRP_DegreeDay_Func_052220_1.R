@@ -8,7 +8,7 @@ AFRP.degreeday = function(templogpath, water, depth, metric, tempthresh, minday 
   templog = fread(templogpath, stringsAsFactors = F, na.strings = c("", "NA"))
   #templog[which(templog$TEMP_C == "NA"),]$TEMP_C = NA
  
-  
+  head(templog)
   #Subset and warn/exit if settings are wrong
   temp.sub = templog %>% filter(WATER == water)
   if(dim(temp.sub)[1] == 0){cat("Error: Water not found in data - exiting\n");return()}
